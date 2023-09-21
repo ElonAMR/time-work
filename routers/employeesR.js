@@ -46,3 +46,18 @@ router.delete("/Del/:row_id",(req, res) => {
     });
 });
 
+
+router.get("/List",(req, res) => {
+    let q="SELECT * FROM employees ";
+    db_pool.query(q, function(err, rows, fields){
+        if(err)
+        {
+            res.status(500).json({message: err})
+        }
+        else
+        {
+            res.status(200).json(rows );
+        }
+    });
+    // res.send("good morning");
+});
