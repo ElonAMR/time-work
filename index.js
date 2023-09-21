@@ -9,10 +9,12 @@ const path = require('path');
 // app.use(express.static(path.join(dirname, "css")));
 // app.use(express.static(path.join(dirname, "js")));
 
+var db_M = require('./database');
+global.db_pool = db_M.pool;
 
 
-
-
+const employees_rtr = require('./routers/employeesR');
+app.use('/employees', employees_rtr);
 
 
 
