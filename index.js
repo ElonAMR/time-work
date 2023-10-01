@@ -23,5 +23,7 @@ app.use('/employees_TW', employees_TW_rtr);
 
 app.listen(port, () => {            //server starts listening for any attempts from a client to connect at port: {port}
     console.log(`Now listening on port http://localhost:${port}`);
+    console.log(`Now listening on port http://localhost:${port}/employees`);
+    console.log(`Now listening on port http://localhost:${port}/employees_TW`);
 
 });

@@ -1,0 +1,19 @@
+<%- include("top.ejs") %>
+
+<main>
+    <h1 id="employees">Employees TIME</h1>
+    <br/>
+    <select onchange=" CreateTable();" id="select">
+        <option id="option" disabled selected value=" ">בחר שם </option>
+    </select>
+
+    <div id="shaon"></div>
+
+    <button id="start" onclick="addstart();">start</button>
+
+    <button id="end" onclick="addend();">end </button>
+    <!--    <tbody id="mainTable">  </tbody>-->
+    <script src="/time.js"></script>
+</main>
+
+<%- include("bottom.ejs") %>

@@ -2,6 +2,13 @@ const express = require('express');
 const router = express.Router()
 module.exports = router;
 
+router.get("/",function (req,res){
+    res.render("employees_TW.ejs");
+})
+
+router.get("/time",function (req,res){
+    res.render("time.ejs");
+})
 
 router.post("/Adds",(req, res) => {
     let {name} = req.body;
@@ -34,7 +41,7 @@ router.post("/Addend",(req, res) => {
 
 
 
-router.patch("/Edit/Start",(req, res) => {
+router.patch("/EditStart",(req, res) => {
     let name=req.body.name;
     let start=req.body.start;
     let q=`UPDATE \`employees time\`  SET start ='${start}' WHERE name='${name}'` ;
@@ -49,7 +56,7 @@ router.patch("/Edit/Start",(req, res) => {
 });
 
 
-router.patch("/Edit/End",(req, res) => {
+router.patch("/EditEnd",(req, res) => {
     let name=req.body.name;
     let end=req.body.end;
     let q=`UPDATE \`employees time\`  SET end ='${end}' WHERE name='${name}'` ;
